@@ -1,0 +1,50 @@
+---
+import ContactMainForm from "@/components/contact-main-form";
+import SubpageHero from "@/components/subpage-hero";
+import Layout from "../layouts/BaseLayout.astro";
+import { Mail, MapPin, MessagesSquare, Phone } from "lucide-react";
+import { EMAIL, TEL_NUMBER } from "@/consts";
+import ContactImage from "@images/contact-hero.jpg";
+import { getImage } from "astro:assets";
+const ContactHeroImage = await getImage({ src: ContactImage, format: "webp" });
+---
+
+<Layout
+    title="Free Website Demo | Contact"
+    description="A sample contact page demonstrating how customers can easily get in touch through forms, phone links, and service area information."
+>
+    <SubpageHero
+        title="Contact Brisben Signs & Designs"
+        text="If you are looking for reliable signage and graphic design services in Brisbane, we would love to hear from you. Whether you are planning new signage, vehicle wraps, branded apparel, or need design support, our team is ready to discuss your project and help you find the right solution for your business."
+        buttonLink="/contact/#contact-form"
+        image={ContactHeroImage.src}
+        client:load
+    />
+    <ContactMainForm
+        title="Get in Touch With Our Brisbane Signage Team"
+        text="Have a question or ready to get started on your signage project? Brisben Signs & Designs works with businesses across Brisbane and surrounding areas to deliver quality signage, wraps and graphic design solutions. Fill out the form below and we will get back to you as soon as possible to discuss your needs and provide clear, honest advice."
+        contactInfo={[
+            {
+                title: "Email",
+                description: "Get a response within 24 hours",
+                icon: Mail,
+                href: `mailto:${EMAIL}`,
+                value: EMAIL,
+            },
+            {
+                title: "Phone",
+                description: "Mon-Fri, 9AM-6PM",
+                icon: Phone,
+                href: `tel:${TEL_NUMBER}`,
+                value: TEL_NUMBER,
+            },
+            {
+                title: "Message",
+                description: "Chat with us on messenger",
+                icon: MessagesSquare,
+                href: "https://facebook.com",
+                value: "Messenger",
+            },
+        ]}
+    />
+</Layout>

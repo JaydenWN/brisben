@@ -1,0 +1,189 @@
+---
+import { getImage } from "astro:assets";
+import SubpageHero from "@/components/subpage-hero";
+import ServicesList from "@/components/services-list";
+import ServicesService from "@/components/services-service";
+import Layout from "../layouts/BaseLayout.astro";
+import ServicesImage from "@images/landing-hero.jpg";
+import Service1 from "@images/car-wrap.jpg";
+import Service2 from "@images/retail-sign.jpg";
+import Service3 from "@images/signage.jpg";
+import Service4 from "@images/custom-signs.jpg";
+import Service5 from "@images/hats.jpg";
+import Service6 from "@images/shirts.jpg";
+import Service7 from "@images/embro.jpg";
+import Service8 from "@images/svg-redraw.png";
+import LandingContact from "@/components/landing-contact";
+
+const ServiceImage1 = await getImage({ src: Service1, format: "webp" });
+const ServiceImage2 = await getImage({ src: Service2, format: "webp" });
+const ServiceImage3 = await getImage({ src: Service3, format: "webp" });
+const ServiceImage4 = await getImage({ src: Service4, format: "webp" });
+const ServiceImage5 = await getImage({ src: Service5, format: "webp" });
+const ServiceImage6 = await getImage({ src: Service6, format: "webp" });
+const ServiceImage7 = await getImage({ src: Service7, format: "webp" });
+const ServiceImage8 = await getImage({ src: Service8, format: "webp" });
+const HeroImage = await getImage({ src: ServicesImage, format: "webp" });
+---
+
+<Layout
+    title="Free Website Demo | Services"
+    description="An example services page showing how your business offerings can be clearly presented to customers in a clean, easy-to-read layout."
+>
+    <SubpageHero
+        title="Signage & Design Services in Brisbane"
+        text="Brisben Signs & Designs offers a complete range of signage and graphic design services for businesses across Brisbane and surrounding areas. With over 10 years of industry experience, we deliver high-quality signage solutions including vehicle and marine wraps, retail and commercial signage, custom signage, and branded apparel. From concept design through to production and installation, our services are tailored to suit your business, your space and your goals."
+        buttonLink="/contact/#contact-form"
+        image={HeroImage.src}
+        client:load
+    />
+    <ServicesList
+        title="Our Signage & Design Services"
+        text="We provide a wide range of signage and graphic design services for Brisbane businesses, delivering practical, high-quality solutions tailored to your brand and environment."
+        serviceList={[
+            {
+                title: "Vehicle & Marine Wraps",
+                text: "Custom part and full wraps designed to promote your business on the road or water with a durable, professional finish.",
+                link: "#vehicle-wrap",
+            },
+            {
+                title: "Retail, Café & Commercial Signage",
+                text: "Signage solutions for retail stores, cafés and commercial spaces that improve visibility and create a strong first impression.",
+                link: "#retail",
+            },
+            {
+                title: "Event, Convention & Showroom Signage",
+                text: "Temporary and permanent signage for events, exhibitions, conventions and showrooms, designed to attract attention and support your brand.",
+                link: "#event",
+            },
+            {
+                title: "Custom Signage Solutions",
+                text: "Tailored signage designed to suit your business needs, location requirements and project goals.",
+                link: "#signs",
+            },
+            {
+                title: "T-Shirt & Hat Printing",
+                text: "High-quality branded apparel printing suitable for staff uniforms, promotions and events.",
+                link: "#hats",
+            },
+            {
+                title: "Graphic Apparel Pressing (DTF)",
+                text: "Direct-to-Film printing for detailed, long-lasting designs on a wide range of garments.",
+                link: "#dtf",
+            },
+            {
+                title: "Embroidery Services",
+                text: "Professional embroidery for logos and branding on hats, shirts and workwear.",
+                link: "#embroidery",
+            },
+            {
+                title: "Concept Design & Vector Redraw",
+                text: "Clean, scalable artwork creation and redraw services to ensure your designs are print-ready and consistent across all applications.",
+                link: "#vectors",
+            },
+        ]}
+    />
+    <ServicesService
+        className="bg-background"
+        reasons={[
+            "Experience with both road and marine applications",
+            "Durable materials designed for Australian conditions",
+            "Custom designs tailored to your brand and vehicle type",
+        ]}
+        id="vehicle-wrap"
+        image={{
+            src: ServiceImage1.src,
+            alt: "Vehicle & Marine Wraps in Brisbane",
+        }}
+        title="Vehicle & Marine Wraps in Brisbane"
+        text="Vehicle and marine wraps are one of the most effective ways to promote your business every day. Brisben Signs & Designs provides custom part and full wraps for cars, vans, trucks and marine vessels across Brisbane and surrounding areas. Our wraps are designed to reflect your brand clearly while using high-quality materials suited to Australian conditions. From simple branding through to full visual transformations, we ensure your vehicle or vessel stands out with a professional, long-lasting finish."
+    />
+    <ServicesService
+        reasons={[
+            "Signage designed to suit your location and customer flow",
+            "Clean, professional designs that enhance your brand",
+            "Practical solutions built for long-term use",
+        ]}
+        variant="reverse"
+        id="retail"
+        image={{ src: ServiceImage2.src, alt: "Property Maintenance" }}
+        title="Retail, Café & Commercial Signage"
+        text="Strong signage plays a major role in attracting customers and creating a professional first impression. We design and produce signage for retail stores, cafés and commercial spaces throughout Brisbane, helping businesses improve visibility and brand recognition. Whether it’s shopfront signage, internal branding or directional signage, we focus on clarity, quality and designs that suit your space and audience."
+    />
+    <ServicesService
+        className="bg-background"
+        reasons={[
+            "Experience working in fast-paced event environments",
+            "Clear, eye-catching designs that stand out",
+            "Flexible solutions for short-term and long-term use",
+        ]}
+        id="event"
+        image={{ src: ServiceImage3.src, alt: "Property Maintenance" }}
+        title="Event, Convention & Showroom Signage"
+        text="Events and exhibitions require signage that attracts attention while clearly communicating your message. Brisben Signs & Designs delivers signage solutions for events, conventions and showrooms across Brisbane, including temporary and semi-permanent displays. We work closely with you to ensure your signage aligns with your brand and performs effectively in busy, high-traffic environments."
+    />
+    <ServicesService
+        reasons={[
+            "Tailored solutions designed specifically for your business",
+            "Honest advice based on real-world experience",
+            "End-to-end service from design to delivery",
+        ]}
+        variant="reverse"
+        id="signs"
+        image={{ src: ServiceImage4.src, alt: "Property Maintenance" }}
+        title="Custom Signage Solutions"
+        text="Every business and project is different, which is why we offer fully custom signage solutions. From concept through to production, Brisben Signs & Designs creates signage tailored to your specific needs, environment and goals. Whether you have a clear idea or need guidance on the right approach, we help you find a signage solution that fits your business perfectly."
+    />
+    <ServicesService
+        className="bg-background"
+        reasons={[
+            "High-quality prints designed to last",
+            "Suitable for businesses, events and promotions",
+            "Consistent branding across all garments",
+        ]}
+        id="hats"
+        image={{ src: ServiceImage5.src, alt: "Property Maintenance" }}
+        title="T-Shirt & Hat Printing"
+        text="Branded apparel is a simple and effective way to promote your business and present a professional image. We provide high-quality t-shirt and hat printing for Brisbane businesses, suitable for staff uniforms, events and promotions. Our printing methods ensure vibrant colours and durable results that hold up to regular wear."
+    />
+    <ServicesService
+        reasons={[
+            "Excellent detail and colour accuracy",
+            "Durable prints suitable for frequent wear",
+            "Works across a wide range of apparel",
+        ]}
+        variant="reverse"
+        id="dtf"
+        image={{ src: ServiceImage6.src, alt: "Property Maintenance" }}
+        title="Graphic Apparel Pressing (DTF)"
+        text="Direct-to-Film printing is ideal for detailed designs and vibrant colours across a wide range of garments. Brisben Signs & Designs uses modern DTF printing methods to deliver long-lasting, high-quality apparel prints for Brisbane businesses. This approach allows for flexibility in garment types while maintaining sharp, professional results."
+    />
+    <ServicesService
+        className="bg-background"
+        reasons={[
+            "Professional, high-quality finish",
+            "Ideal for uniforms and workwear",
+            "Long-lasting branding solution",
+        ]}
+        id="embroidery"
+        image={{ src: ServiceImage7.src, alt: "Property Maintenance" }}
+        title="Embroidery Services"
+        text="Embroidery offers a premium, professional finish for branded workwear and apparel. We provide embroidery services for logos and branding on hats, shirts and uniforms, helping Brisbane businesses achieve a polished and consistent look. Our embroidery work is precise and designed to maintain quality over time."
+    />
+    <ServicesService
+        reasons={[
+            "Artwork optimised for signage and print",
+            "Clean, scalable vector files",
+            "Designs prepared with real-world production in mind",
+        ]}
+        variant="reverse"
+        id="vectors"
+        image={{ src: ServiceImage8.src, alt: "Property Maintenance" }}
+        title="Concept Design & Vector Redraw"
+        text="Clean, scalable artwork is essential for signage and apparel production. Brisben Signs & Designs offers concept design and vector redraw services to ensure your artwork is print-ready and consistent across all applications. Whether you need a new design created or an existing logo refined, we prepare artwork that delivers professional results."
+    />
+    <LandingContact
+        title="Talk to a Brisbane Signage Specialist"
+        text="If you are planning new signage, vehicle wraps, branded apparel, or need help choosing the right solution for your business, Brisben Signs & Designs is here to help. We work with businesses across Brisbane and surrounding areas to deliver signage that looks professional and performs in real-world conditions. Get in touch today to discuss your project and receive clear advice tailored to your needs."
+    />
+</Layout>

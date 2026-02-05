@@ -1,0 +1,66 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "@/components/footer";
+import "../styles/global.css";
+import Navbar from "@/components/navbar";
+import { SITE_URL } from "@/consts";
+import SiteLogo from "@icons/logo.svg";
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+
+	<body>
+		<Navbar
+			client:load
+			logo={{
+				url: SITE_URL,
+				src: SiteLogo.src,
+			}}
+			menu={[
+				{ title: "Home", url: SITE_URL },
+				{ title: "Contact", url: "/contact" },
+				{ title: "Services", url: "/services" },
+			]}
+		/>
+		<main>
+			<slot />
+		</main>
+		<Footer
+			client:visible
+			buttonLink="/contact"
+			linkSections={[
+				{
+					title: "Site Navigation",
+					links: [
+						{
+							text: "Home",
+							href: "/",
+						},
+						{
+							text: "Contact",
+							href: "/contact",
+						},
+						{
+							text: "Services",
+							href: "/services",
+						},
+					],
+				},
+				{
+					title: "Social Media",
+					links: [
+						{
+							text: "Instagram",
+							href: "https://www.instagram.com/brisben_design_signs",
+						},
+					],
+				},
+			]}
+		/>
+	</body>
+</html>

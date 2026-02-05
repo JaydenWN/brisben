@@ -1,0 +1,259 @@
+---
+import { getImage } from "astro:assets";
+import AboutHeroImage from "../assets/blog-placeholder-about.jpg";
+import Layout from "../layouts/BaseLayout.astro";
+import LandingHero from "@/components/landing-hero";
+import LandingServices from "@/components/landing-services";
+import LandingWhy from "@/components/landing-why";
+import LandingTestimonials from "@/components/landing-testimonials";
+import LandingFAQ from "@/components/landing-faq";
+import LandingContact from "@/components/landing-contact";
+
+import HeroImage from "@images/landing-hero.JPG";
+import CarImage from "@images/car-wrap.jpg";
+import RetailImage from "@images/retail-sign.jpg";
+import SignsImage from "@images/custom-signs.jpg";
+import HatImage from "@images/hats.jpg";
+import ShirtImage from "@images/shirts.jpg";
+import EmbroImage from "@images/embro.jpg";
+import SvgImage from "@images/svg-redraw.png";
+import {
+	BadgeCheck,
+	Briefcase,
+	Clock,
+	Cog,
+	Home,
+	Layers,
+	MapPin,
+	MessagesSquareIcon,
+	Users,
+} from "lucide-react";
+import LandingProcess from "@/components/landing-process";
+import Process1 from "@images/process1.jpg";
+import Process2 from "@images/process2.jpg";
+import Process3 from "@images/process3.jpg";
+const heroImage = await getImage({ src: HeroImage, format: "webp" });
+
+const ServiceImage1 = await getImage({ src: CarImage, format: "webp" });
+const ServiceImage2 = await getImage({ src: RetailImage, format: "webp" });
+const ServiceImage3 = await getImage({ src: SignsImage, format: "webp" });
+const ServiceImage4 = await getImage({ src: HatImage, format: "webp" });
+const ServiceImage5 = await getImage({ src: ShirtImage, format: "webp" });
+const ServiceImage6 = await getImage({ src: EmbroImage, format: "webp" });
+const ServiceImage7 = await getImage({ src: SvgImage, format: "webp" });
+
+const ProcessImage1 = await getImage({ src: Process1, format: "webp" });
+const ProcessImage2 = await getImage({ src: Process2, format: "webp" });
+const ProcessImage3 = await getImage({ src: Process3, format: "webp" });
+---
+
+<Layout
+	title="Free Website Demo | Home"
+	description="This website is a demonstration of the free website design we offer to our customers. It shows the layout, structure, and features included, so you can see exactly what your business website could look like before getting started."
+>
+	<LandingHero
+		badgeText="Trusted Brisbane Signage Company"
+		heading="Professional Signage & Graphic Design Services in Brisbane"
+		description="Brisben Signs & Designs is a Brisbane-based signage and graphic design company with over 10 years of experience servicing Brisbane and surrounding areas. We create custom signage solutions for businesses across all industries, including vehicle and marine wraps, retail and café signage, event and convention displays, and branded apparel printing. From concept design through to production and installation, we help Brisbane businesses stand out with signage that fits their brand, space and purpose. We also offer flexible operating hours, including Saturdays and Sundays, to suit your project timeline."
+		image={{ src: heroImage.src, alt: "Costal Pro Services" }}
+		buttons={{
+			primary: { text: "Contact Us", url: "/contact" },
+			secondary: { text: "View our Services", url: "/services" },
+		}}
+	/>
+	<LandingServices
+		title="Our Signage & Design Services in Brisbane"
+		services={[
+			{
+				title: "Vehicle & Marine Wraps",
+				text: "Custom part and full wraps designed to promote your brand on the road or water with a professional, high-impact finish.",
+				imageSrc: ServiceImage1.src,
+			},
+			{
+				title: "Retail, Events & Commercial Signage",
+				text: "Signage solutions for retail stores, cafés, conventions, showrooms and events that help your space stand out and attract attention.",
+				imageSrc: ServiceImage2.src,
+			},
+			{
+				title: "Custom Signage Solutions",
+				text: "Tailored signage designed to suit your business, project requirements and installation environment.",
+				imageSrc: ServiceImage3.src,
+			},
+			{
+				title: "T-Shirt & Hat Printing",
+				text: "High-quality branded apparel using modern printing methods to ensure vibrant, durable results.",
+				imageSrc: ServiceImage4.src,
+			},
+			{
+				title: "Graphic Apparel Pressing (DTF)",
+				text: "Direct-to-Film printing for detailed, long-lasting designs on a wide range of garments.",
+				imageSrc: ServiceImage5.src,
+			},
+			{
+				title: "Embroidery Services",
+				text: "Professional embroidery for logos and branding on hats, shirts and workwear.",
+				imageSrc: ServiceImage6.src,
+			},
+			{
+				title: "Concept Design & Vector Redraw",
+				text: "Clean, scalable artwork creation and logo redraws ready for print, signage and apparel.",
+				imageSrc: ServiceImage7.src,
+			},
+		]}
+		benefits={[
+			"Over 10 Years of Local Experience",
+			"Creative, Practical Signage Solutions",
+			"Flexible Service to Suit Your Schedule",
+		]}
+	/>
+	<LandingWhy
+		title="Why Choose Brisben Signs & Designs"
+		text="Choosing the right signage partner matters. At Brisben Signs & Designs, we focus on delivering signage and graphic solutions that are well designed, well made and built to represent your business properly. With local experience and a practical approach, we make the process simple from start to finish."
+		services={[
+			{
+				title: "Local Brisbane Expertise",
+				text: "With over 10 years of experience working across Brisbane and surrounding areas, we understand local businesses, venues and environments. This allows us to recommend signage solutions that suit real conditions, not just designs on paper.",
+				icon: MapPin,
+			},
+			{
+				title: "Complete Signage & Design Service",
+				text: "From concept design and vector redraws through to production and installation, everything is handled in-house. This ensures consistency, quality control and a smoother process for your project.",
+				icon: Layers,
+			},
+			{
+				title: "Versatile Industry Experience",
+				text: "We work with businesses across all industries, delivering signage for vehicles, marine applications, retail spaces, events, conventions and branded apparel. No matter the project size or setting, we tailor the solution to your needs.",
+				icon: Briefcase,
+			},
+			{
+				title: "Reliable & Flexible Scheduling",
+				text: "We offer extended operating hours, including Saturdays and Sundays, making it easier to complete your signage project around your business schedule and deadlines.",
+				icon: Clock,
+			},
+		]}
+	/>
+	<LandingProcess
+		client:load
+		title="Our Simple Process"
+		text="We keep the signage process straightforward and stress free. From the first conversation to final delivery, we guide you through each step to ensure your signage is designed correctly, produced to a high standard and delivered on time."
+		processes={[
+			{
+				title: "Consultation & Planning",
+				text: "We start by understanding your business, location and signage needs. This allows us to recommend the most suitable signage solution for your brand, space and budget.",
+				image: ProcessImage1.src,
+			},
+			{
+				title: "Design & Production",
+				text: "Our team creates clean, professional designs or refines your existing artwork, then moves into production using quality materials and proven processes.",
+				image: ProcessImage2.src,
+			},
+			{
+				title: "Installation & Delivery",
+				text: "Once complete, your signage is carefully installed or prepared for collection, ensuring a polished finish that represents your business properly.",
+				image: ProcessImage3.src,
+			},
+		]}
+	/>
+	<LandingTestimonials
+		client:load
+		title="What Our Clients Say"
+		testimonials={[
+			{
+				name: "Mark",
+				location: "Central Coast",
+				text: "Coastal Pro Services were easy to deal with from start to finish. They turned up on time, explained everything clearly, and the work was done to a really high standard.",
+			},
+			{
+				name: "Sarah",
+				location: "Gosford",
+				text: "Great service and attention to detail. The property looks noticeably better and the whole process was straightforward and stress free.",
+			},
+			{
+				name: "Daniel",
+				location: "Terrigal",
+				text: "Reliable, professional, and honest. It’s hard to find trades you can trust, but Coastal Pro Services delivered exactly what they promised.",
+			},
+			{
+				name: "Emma",
+				location: "Tuggerah",
+				text: "Really happy with the work done. Communication was clear, pricing was fair, and everything was completed exactly as discussed.",
+			},
+			{
+				name: "Luke",
+				location: "Wyong",
+				text: "The team did a great job and left the place clean and tidy. It was refreshing to deal with a local business that actually cares about quality.",
+			},
+			{
+				name: "Michelle",
+				location: "Erina",
+				text: "Very professional service from the first call through to completion. I would definitely use Coastal Pro Services again.",
+			},
+			{
+				name: "James",
+				location: "Woy Woy",
+				text: "Prompt, reliable, and easy to work with. The work was done efficiently and the results speak for themselves.",
+			},
+			{
+				name: "Natalie",
+				location: "The Entrance",
+				text: "Excellent service and great attention to detail. Everything was explained clearly and the end result was exactly what we were after.",
+			},
+			{
+				name: "Chris",
+				location: "Bateau Bay",
+				text: "Coastal Pro Services made the whole process simple. They showed up on time, did quality work, and communicated well throughout.",
+			},
+		]}
+	/>
+	<LandingFAQ
+		client:load
+		title="Frequently Asked Questions"
+		text="We know hiring a property services team comes with questions. Below are some of the most common things we’re asked to help you feel confident before getting started."
+		faqs={[
+			{
+				question: "What signage services do you offer in Brisbane?",
+				answer: "We offer a wide range of signage and graphic design services across Brisbane and surrounding areas. This includes vehicle and marine wraps, retail and café signage, event and convention displays, custom signage solutions, apparel printing, embroidery, and artwork preparation such as concept design and vector redraws.",
+			},
+			{
+				question: "Do you service all areas of Brisbane?",
+				answer: "Yes. We service Brisbane and surrounding suburbs. If you are unsure whether we cover your location, feel free to get in touch and we will be happy to confirm.",
+			},
+			{
+				question:
+					"Can you help with signage design if I don’t have artwork?",
+				answer: "Absolutely. We can design your signage from scratch or refine existing ideas. Our design services include concept design and vector redraws to ensure your artwork is print-ready and looks professional across all signage and apparel.",
+			},
+			{
+				question:
+					"Do you offer vehicle and marine wraps for businesses?",
+				answer: "Yes. We specialise in both part and full vehicle wraps, as well as marine wraps. These are designed to promote your business while maintaining a high-quality, durable finish suited to Australian conditions.",
+			},
+			{
+				question: "What types of businesses do you work with?",
+				answer: "We work with businesses across all industries, including retail stores, cafés, trade businesses, event organisers, corporate clients and more. Our signage solutions are tailored to suit your industry, space and branding requirements.",
+			},
+			{
+				question: "Do you offer custom signage solutions?",
+				answer: "Yes. Every project is different, which is why we offer fully customised signage solutions. We take the time to understand your goals and recommend signage that fits your business and project needs.",
+			},
+			{
+				question: "Are you available on weekends?",
+				answer: "Yes. We offer flexible operating hours and can extend into Saturdays and Sundays when required, helping keep your project on track without disrupting your business operations.",
+			},
+			{
+				question: "How do I get a quote for signage in Brisbane?",
+				answer: "Getting a quote is easy. Simply contact us with a brief overview of your signage needs, and we will discuss your options and provide clear pricing based on your project.",
+			},
+			{
+				question: "Why choose a local Brisbane signage company?",
+				answer: "Working with a local Brisbane signage company means better communication, faster turnaround times, and signage designed for local conditions. Our experience working with Brisbane businesses helps ensure your signage is practical, compliant and built to last.",
+			},
+		]}
+		buttonText="Contact Us"
+		buttonLink="/contact"
+	/>
+	<LandingContact
+		title="Get Started With Brisbane’s Trusted Signage Team"
+		text="If you are looking for professional signage and graphic design services in Brisbane, Brisben Signs & Designs is here to help. Whether you have a clear idea in mind or need guidance on the right signage solution, our team is ready to discuss your project and provide honest advice. Get in touch today to talk through your signage needs and receive a tailored solution that suits your business."
+	/>
+</Layout>
