@@ -4,7 +4,7 @@ import SubpageHero from "@/components/subpage-hero";
 import ServicesList from "@/components/services-list";
 import ServicesService from "@/components/services-service";
 import Layout from "../layouts/BaseLayout.astro";
-import ServicesImage from "@images/landing-hero.png";
+import ServicesImage from "@images/landing-hero.JPG";
 import Service1 from "@images/car-wrap.jpg";
 import Service2 from "@images/retail-sign.jpg";
 import Service3 from "@images/signage.jpg";
@@ -62,20 +62,20 @@ const HeroImage = await getImage({ src: ServicesImage, format: "webp" });
                 link: "#signs",
             },
             {
-                title: "T-Shirt & Hat Printing",
+                title: "T-Shirt & Hat Printing (DTF)",
                 text: "High-quality branded apparel printing suitable for staff uniforms, promotions and events.",
                 link: "#hats",
             },
-            {
-                title: "Graphic Apparel Pressing (DTF)",
-                text: "Direct-to-Film printing for detailed, long-lasting designs on a wide range of garments.",
-                link: "#dtf",
-            },
-            {
-                title: "Embroidery Services",
-                text: "Professional embroidery for logos and branding on hats, shirts and workwear.",
-                link: "#embroidery",
-            },
+            // {
+            //     title: "Graphic Apparel Pressing (DTF)",
+            //     text: "Direct-to-Film printing for detailed, long-lasting designs on a wide range of garments.",
+            //     link: "#dtf",
+            // },
+            // {
+            //     title: "Embroidery Services",
+            //     text: "Professional embroidery for logos and branding on hats, shirts and workwear.",
+            //     link: "#embroidery",
+            // },
             {
                 title: "Concept Design & Vector Redraw",
                 text: "Clean, scalable artwork creation and redraw services to ensure your designs are print-ready and consistent across all applications.",
@@ -143,10 +143,10 @@ const HeroImage = await getImage({ src: ServicesImage, format: "webp" });
         ]}
         id="hats"
         image={{ src: ServiceImage5.src, alt: "Property Maintenance" }}
-        title="T-Shirt & Hat Printing"
-        text="Branded apparel is a simple and effective way to promote your business and present a professional image. We provide high-quality t-shirt and hat printing for Brisbane businesses, suitable for staff uniforms, events and promotions. Our printing methods ensure vibrant colours and durable results that hold up to regular wear."
+        title="T-Shirt & Hat Printing (DTF)"
+        text="Branded apparel is a simple and effective way to promote your business and present a professional image. We provide high-quality t-shirt and hat DTF printing for Brisbane businesses, suitable for staff uniforms, events and promotions. Our printing methods ensure vibrant colours and durable results that hold up to regular wear."
     />
-    <ServicesService
+    <!-- <ServicesService
         reasons={[
             "Excellent detail and colour accuracy",
             "Durable prints suitable for frequent wear",
@@ -157,8 +157,8 @@ const HeroImage = await getImage({ src: ServicesImage, format: "webp" });
         image={{ src: ServiceImage6.src, alt: "Property Maintenance" }}
         title="Graphic Apparel Pressing (DTF)"
         text="Direct-to-Film printing is ideal for detailed designs and vibrant colours across a wide range of garments. Brisben Designs & Signs uses modern DTF printing methods to deliver long-lasting, high-quality apparel prints for Brisbane businesses. This approach allows for flexibility in garment types while maintaining sharp, professional results."
-    />
-    <ServicesService
+    /> -->
+    <!-- <ServicesService
         className="bg-background"
         reasons={[
             "Professional, high-quality finish",
@@ -169,7 +169,7 @@ const HeroImage = await getImage({ src: ServicesImage, format: "webp" });
         image={{ src: ServiceImage7.src, alt: "Property Maintenance" }}
         title="Embroidery Services"
         text="Embroidery offers a premium, professional finish for branded workwear and apparel. We provide embroidery services for logos and branding on hats, shirts and uniforms, helping Brisbane businesses achieve a polished and consistent look. Our embroidery work is precise and designed to maintain quality over time."
-    />
+    /> -->
     <ServicesService
         reasons={[
             "Artwork optimised for signage and print",
