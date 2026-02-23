@@ -20,7 +20,7 @@ const defaultServices = [
 	{
 		icon: <PenTool className="h-8 w-8" />,
 		title: "Design",
-		text: "Beautiful, functional designs that create memorable user experiences.",
+		text: "Beautiful, functional design that create memorable user experiences.",
 	},
 	{
 		icon: <Code className="h-8 w-8" />,
