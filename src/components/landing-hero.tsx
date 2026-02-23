@@ -61,7 +61,7 @@ export default function LandingHero({
 						</div>
 						<p className="text-left font-medium ">{badgeText}</p>
 					</Badge>
-					<img src={sitelogo} alt="logo" className="w-[50%]" />
+
 					<h1 className="my-6 text-3xl font-bold text-pretty lg:text-5xl xl:text-6xl">
 						{heading}
 					</h1>
@@ -87,12 +87,13 @@ export default function LandingHero({
 						)}
 					</div>
 				</div>
-				<div className="flex">
+				<div className="flex-column">
 					<img
 						src={image.src}
 						alt={image.alt}
 						className="max-h-[600px] w-full rounded-md object-cover lg:max-h-[800px]"
 					/>
+					<img src={sitelogo} alt="logo" className="w-[50%] mx-auto" />
 				</div>
 			</div>
 		</section>
