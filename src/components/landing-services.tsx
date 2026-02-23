@@ -59,7 +59,7 @@ export default function LandingServices({
 						<p className="tracking-tight">Our Services</p>
 					</div>
 					<p className="text-sm">
-						<span className="font-mono">+10</span> years of experience
+						<span className="font-mono">+15</span> years of experience
 					</p>
 				</div>
 				<div className="mt-20 grid grid-cols-1 gap-20 lg:grid-cols-3">
