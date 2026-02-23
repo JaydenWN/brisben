@@ -8,8 +8,9 @@ import LandingWhy from "@/components/landing-why";
 import LandingTestimonials from "@/components/landing-testimonials";
 import LandingFAQ from "@/components/landing-faq";
 import LandingContact from "@/components/landing-contact";
+import siteLogo from "@icons/logo.svg";
 
-import HeroImage from "@images/landing-hero.png";
+import HeroImage from "@images/landing-hero.JPG";
 import CarImage from "@images/car-wrap.jpg";
 import RetailImage from "@images/retail-sign.jpg";
 import SignsImage from "@images/custom-signs.jpg";
@@ -60,6 +61,7 @@ const ProcessImage3 = await getImage({ src: Process3, format: "webp" });
 			primary: { text: "Contact Us", url: "/contact" },
 			secondary: { text: "View our Services", url: "/services" },
 		}}
+		sitelogo={siteLogo.src}
 	/>
 
 	<LandingWhy
@@ -107,7 +109,7 @@ const ProcessImage3 = await getImage({ src: Process3, format: "webp" });
 				imageSrc: ServiceImage3.src,
 			},
 			{
-				title: "T-Shirt & Hat Printing",
+				title: "T-Shirt & Hats",
 				text: "High-quality branded apparel using modern printing methods to ensure vibrant, durable results.",
 				imageSrc: ServiceImage4.src,
 			},
@@ -116,11 +118,7 @@ const ProcessImage3 = await getImage({ src: Process3, format: "webp" });
 				text: "Direct-to-Film printing for detailed, long-lasting designs on a wide range of garments.",
 				imageSrc: ServiceImage5.src,
 			},
-			{
-				title: "Embroidery Services",
-				text: "Professional embroidery for logos and branding on hats, shirts and workwear.",
-				imageSrc: ServiceImage6.src,
-			},
+
 			{
 				title: "Concept Design & Vector Redraw",
 				text: "Clean, scalable artwork creation and logo redraws ready for print, signage and apparel.",

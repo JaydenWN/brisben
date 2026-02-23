@@ -89,17 +89,17 @@ export default function LandingServices({
 								key={index}
 								className="flex items-center justify-between rounded-md border border-border bg-muted py-2 pr-6 pl-2 dark:bg-card"
 							>
-								<div className="flex items-center gap-5">
+								<div className="flex gap-5">
 									<img
 										src={service.imageSrc}
 										alt={service.title}
-										className="h-20 min-w-32 rounded-sm object-cover"
+										className="w-40 rounded-sm object-cover aspect-square"
 									/>
 									<div className="flex flex-col">
 										<h2 className="text-lg font-medium tracking-tight">
 											{service.title}
 										</h2>
-										<p className="tracking-tight text-muted-foreground">
+										<p className="tracking-tight text-muted-foreground lg:max-w-xl">
 											{service.text}
 										</p>
 									</div>
